@@ -20,3 +20,6 @@ yum install libevent libevent-devel -y
 groupadd zabbix
 useradd -s /sbin/nologin -g zabbix zabbix
  ./configure --prefix=/usr/local/zabbix --enable-server --enable-agent --with-mysql=/usr/local/mysql/bin/mysql_config --with-net-snmp --with-libcurl
+make install
+#编辑zabbix-server配置文件
+vim /usr/local/zabbix/etc/zabbix_server.conf
