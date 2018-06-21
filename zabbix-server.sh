@@ -1,13 +1,5 @@
-#This is yum install zabbix
-#http://www.cnblogs.com/clsn/p/7885990.html#auto_id_16
-#查看系统版本
-cat /etc/redhat-release 
-   CentOS Linux release 7.4.1708 (Core)
-uname -r
-   3.10.0-693.el7.x86_64
-#配置域名解析
-vim /etc/resolve.conf
-   nameserver 114.114.114.114
+#!/bin/bash
+#The shell for zabbix-server
 #安装网络源，zabbix源
 curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
@@ -40,3 +32,4 @@ chkconfig httpd on
 chkconfig zabbix-server on
 #输出信息
 echo "浏览器访问 http://`hostname -I|awk '{print $1}'`/zabbix"
+
