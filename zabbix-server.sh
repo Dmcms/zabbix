@@ -1,5 +1,7 @@
 #!/bin/bash
 #The shell for zabbix-server
+#配置解析
+echo "nameserver 114.114.114.114" >> /etc/resolv.conf
 #安装网络源，zabbix源
 curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
