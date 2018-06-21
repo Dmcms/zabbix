@@ -35,3 +35,6 @@ chkconfig zabbix-server on
 #输出信息
 echo "浏览器访问 http://`hostname -I|awk '{print $1}'`/zabbix"
 
+#服务端安装zabbix-get测试
+zabbix_get -s 192.168.0.32 -p 10050 -k "system.cpu.load[all,avg1]"
+      0.000000
