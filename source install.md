@@ -1,5 +1,9 @@
 # zabbix
 #install zabbix.tar.gz
+#解决依赖
+yum install gcc gcc-c++ -y
+yum install -y net-snmp-devel  
+yum install libevent libevent-devel -y
 #mysql创建密码
 mysqladmin -u root password "123456"  
 #创建数据库并授权
@@ -13,9 +17,6 @@ mysql> flush privileges;
 mysql -uzabbix -p123456 zabbix < database/mysql/schema.sql
 mysql -uzabbix -p123456 zabbix < database/mysql/images.sql
 mysql -uzabbix -p123456 zabbix < database/mysql/data.sql
-#解决依赖
-yum install -y net-snmp-devel  
-yum install libevent libevent-devel -y
 #编译安装zabbix
 groupadd zabbix
 useradd -s /sbin/nologin -g zabbix zabbix
